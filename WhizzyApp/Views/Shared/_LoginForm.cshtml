@@ -1,0 +1,26 @@
+﻿@model WhizzyApp.Models.LoginModel
+
+@using (Html.BeginForm("Login", "User", new { ReturnUrl = ViewBag.ReturnUrl}))
+{
+    @Html.AntiForgeryToken();
+    
+    @Html.LabelFor(m => m.EmailAddress, new { @class = "sr-only"})
+    @Html.TextBoxFor(m => m.EmailAddress, new { @class = "form-control", placeholder="Email address", required="required", autofocus="autofocus"})
+    @Html.ValidationMessageFor(m => m.EmailAddress)
+    <br />
+    @Html.LabelFor(m => m.Password, new { @class = "sr-only" })
+    @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder="Password", required="required", autofocus="autofocus"})
+    @Html.ValidationMessageFor(m => m.Password)
+    <div class="checkbox">
+        <label>
+            @Html.CheckBoxFor(m => m.RememberMe) Remember me
+            @Html.LabelFor(m => m.RememberMe, new { @class = "checkbox sr-only" })
+        </label>
+    </div>
+    @Html.ValidationMessage("modelerror");
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+    <br />
+}
+
+    <p class="well well-sm center-block">Don't have an account ? @Html.ActionLink("Register Here", "../User/Register/")</p>
+

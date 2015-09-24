@@ -1,0 +1,97 @@
+﻿@model List<WhizzyApp.Models.Presentation>
+
+@{
+    ViewBag.Title = "Open";
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-2 edit-col edit-col-left"></div>
+        <div class="col-lg-8 edit-col edit-col-main">
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4>Create a New Presentation</h4>
+                </div>
+                <div class="container-fluid">
+                    <div class="panel">
+                        <br />
+                            @using (Html.BeginForm("New", "Create", FormMethod.Post, new { @class = "form-inline", required = "required" }))
+                            {
+                                <div class="form-group-lg">
+                                    @Html.Label("Title")
+                                    <input type="text" name="title" id="title" class="form-control" placeholder="Name your presentation" required style="width:300px;" />
+                                    <button class="btn btn-primary" type="submit">Create »</button>
+                                </div>
+                                @Html.ValidationMessage("Title")
+
+                            }
+
+                            <br />
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4>Edit an Existing Presentation</h4>
+                </div>
+
+                <div class="panel">
+                    <table id="existing-presentations" class="table table-hover table-condensed">
+                        
+                            @{
+                                if (Model.Count > 0)
+                                {
+                                    <thead>
+                                        <th style="width:10%;">#</th>
+                                        <th>Title</th>
+                                        <th style="width:15%;" class="text-center">Modified</th>
+                                        <th style="width: 10%;" class="text-center">Edit</th>
+                                        <th style="width: 10%;" class="text-center">View</th>
+                                        <th style="width: 10%;" class="text-center">Delete</th>
+                                    </thead>
+                                    <tbody>
+                                        @{
+                                            int number = 0;
+                                            foreach (var item in Model)
+                                            {
+                                                ++number;
+                                                <tr id="item_@item.Id">
+                                                    <th scope="row">@number</th>
+                                                    <td>@item.Title</td>
+                                                    <td class="text-center">@item.Modified.ToString("dd/MM/yy HH:mm")</td>
+                                                    <td class="text-center">
+                                                        <a href="@Url.Action("Open", new {id = item.Id})">Edit</a>
+                                                    </td>
+                                                    <td class="text-center"><a href="/View?p=@item.URL" target="_blank">View</a></td>
+                                                    <td class="text-center">
+                                                        @Ajax.ActionLink("Delete", "Delete", new { id = item.Id },
+                                                            new AjaxOptions()
+                                                            {
+                                                            HttpMethod="Delete",
+                                                            Confirm="Are you sure you want to delete this presentation?",
+                                                            OnComplete ="$('#item_" + item.Id + "').remove();"
+                                                            },
+                                                            new {  @class = "text-danger"}
+                                                        )
+                                                    </td>
+                                                </tr>
+                                            }
+                                        }
+                                    </tbody>
+                                }
+                                else
+                                {
+                                    <h5 class="text-center" style="width:100%;">You have not created any presentations yet.</h5>
+                                }
+                            }
+                        
+                    </table>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-lg-2 edit-col edit-col-right"></div>
+    </div>
+</div>

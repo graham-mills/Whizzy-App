@@ -1,0 +1,22 @@
+* {
+	margin:0;
+	padding:0;
+}
+
+html,
+body {
+	background-color:#eee;
+	font:12px Calibri;
+	height:100%;
+	text-align:center;
+	overflow:hidden;
+	width:100%;
+}
+
+#whizzy {
+	display:block;
+	border:1px solid #000;
+	margin:0 auto 0 auto;
+	position:relative;
+	z-index:100;
+}

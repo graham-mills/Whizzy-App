@@ -1,0 +1,59 @@
+﻿<div id="colour-picker-modal" class="modal" tabindex="-1" role="dialog" aria-labelledby="modal-demo" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <input type='text' id="colour-picker" />
+            </div>
+        </div>
+    </div>
+</div>
+<div id="text-edit-modal" class="modal" tabindex="-2" role="dialog" aria-labelledby="modal-demo" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <b>Edit Text</b>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="btn-group" data-toggle="buttons">
+                            <label id="btn_texteditbold" class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="bottom" title="Bold">
+                                <input type="checkbox" autocomplete="off"><span class="glyphicon glyphicon-bold"></span>
+                            </label>
+                            <label id="btn_textedititalic" class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="bottom" title="Italic">
+                                <input type="checkbox" autocomplete="off"><span class="glyphicon glyphicon-italic"></span>
+                            </label>
+                        </div>
+
+                        <div class="btn-group" data-toggle="buttons">
+                            <label id="btn_texteditalignleft" class="btn btn-primary btn-sm active" data-toggle="tooltip" data-placement="bottom" title="Align left">
+                                <input type="radio" name="options" autocomplete="off"><span class="glyphicon glyphicon-align-left"></span>
+                            </label>
+                            <label id="btn_texteditaligncenter" class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="bottom" title="Align center">
+                                <input type="radio" name="options" autocomplete="off"><span class="glyphicon glyphicon-align-center"></span>
+                            </label>
+                            <label id="btn_texteditalignright" class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="bottom" title="Align right">
+                                <input type="radio" name="options" autocomplete="off"><span class="glyphicon glyphicon-align-right"></span>
+                            </label>
+                        </div>
+
+                        <div class="btn-group" data-toggle="buttons">
+                            <button id="btn_texteditlist" class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="bottom" title="Bullet list"><span class="glyphicon glyphicon-list"></span></button>
+                        </div>
+
+                    </div>
+                    <div class="row"><textarea id="text-edit-area" class="form-control" rows="6"></textarea></div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-default" data-dismiss="modal" aria-label="Close">Cancel</button>
+                <button id="btn_texteditsubmit" data-dismiss="modal" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="image-select-modal" class="modal" tabindex="-2" role="dialog" aria-labelledby="modal-demo" aria-hidden="true">
+            @{Html.RenderPartial("_Images");}
+</div>

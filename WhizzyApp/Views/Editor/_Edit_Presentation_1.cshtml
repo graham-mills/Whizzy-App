@@ -1,0 +1,14 @@
+﻿<div id="panel-presentation-1" class="col-lg-2 edit-col">
+    <div class="edit-col-header">
+        <h4>Presentation</h4>
+    </div>
+    <div class="edit-col-body">
+        <div class="form-group">
+            <label>Name</label>
+            <input type="text" id="presentation-title" class="form-control" required value="@Model.Title" />
+            <input type="hidden" name="presentation-id" value="@Model.Id" id="presentation-id" />
+        </div>
+        <hr />
+        @Html.ActionLink("Export Presentation", "Download", "Editor", new { id = Model.Id}, new { @id = "btn_export", @class = "btn btn-success center-block"})
+    </div>
+    </div>

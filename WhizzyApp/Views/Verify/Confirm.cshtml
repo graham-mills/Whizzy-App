@@ -1,0 +1,21 @@
+﻿@{
+    ViewBag.Title = "Confirm";
+    ViewBag.footerLogin = false;
+}
+
+<div class="container">
+    @if (ViewBag.confirmed == null)
+    {
+        <h2>Error</h2>
+    }
+    else if (ViewBag.confirmed == true)
+    {
+        <h2>Thank you for confirming your email address</h2>
+        <p>Visit the @Html.ActionLink("Create", "Index", "Create") page to start your own presentation.</p>
+        <a href="../User/Login" class="btn btn-primary">Sign in</a>
+    }
+    else if (ViewBag.confirmed == false)
+    {
+        <h2>Account could not be verified</h2>
+    }
+</div>

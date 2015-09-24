@@ -1,0 +1,61 @@
+﻿@model WhizzyApp.Models.Presentation
+
+@{
+    ViewBag.Title = "Editor";
+}
+
+@section style {
+@Styles.Render("~/Content/spectrum.css")
+@Styles.Render("~/Content/qunit-1.17.1.css")
+}
+
+@{Html.RenderPartial("_Modals");}
+
+@section Subnav {
+<div class="container">
+    <ul class="nav navbar-nav">
+        <li><a class="togglepanels active" data-id="presentation" href="#">Presentation</a></li>
+        <li><a class="togglepanels" data-id="content" href="#">Content</a></li>
+        <li><a class="togglepanels" data-id="transitions" href="#">Transitions</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+        <li><a id="preview" href="/View?p=@Model.URL" target="_blank">Preview <span class="glyphicon glyphicon-eye-open"></span></a></li>
+    </ul>
+</div>
+}
+
+<div class="container-fluid edit-container">
+    <div class="row edit-row">
+            @{Html.RenderPartial("_Edit_Presentation_1");}
+            @{Html.RenderPartial("_Edit_Content_1");}
+            @{Html.RenderPartial("_Edit_Transitions_1");}
+        <div class="col-lg-8 edit-col edit-col-main">
+            <div id="whizzy-wrap" class="center-block">
+                <canvas id="whizzy" class="edit">
+                    Canvas not supported.
+                </canvas>
+                @{Html.RenderPartial("_Widgets");}
+                <div id="alert" class="alert alert-warning center-block">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <p>Alert</p>
+                </div>
+                <p id="lastsaved"></p>
+            </div>
+        </div>
+            @{Html.RenderPartial("_Edit_Presentation_2");}
+            @{Html.RenderPartial("_Edit_Content_2");}
+            @{Html.RenderPartial("_Edit_Transitions_2");}
+    </div>
+</div>
+
+@section scripts{
+    @Scripts.Render("~/bundles/jqueryui")
+    @Scripts.Render("~/bundles/editor")
+    <script>
+        WHIZZY.json = @Html.Raw(Model.JSON + ";")
+        WHIZZY.settings.IMAGE_PATH = "@Url.Content(Model.Filepath).Replace("\\", "\\\\")img/";
+        window.onload = WHIZZY.main();
+    </script>
+}

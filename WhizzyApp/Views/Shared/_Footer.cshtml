@@ -1,0 +1,13 @@
+﻿<footer>
+        <div class="row">
+            <div class="col-md-6">
+                <p>A Whizzy Presentation Medium / Graham Mills</p>
+            </div>
+            <div class="col-md-6">
+                @if (User.Identity.IsAuthenticated)
+                {
+                     <p class="text-right">Logged In (@Html.ActionLink(User.Identity.Name, "settings", "user") | @Html.ActionLink("Sign out", "Logout", "User"))</p>
+                }
+            </div>
+        </div>
+</footer>

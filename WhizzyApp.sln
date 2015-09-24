@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhizzyApp", "WhizzyApp\WhizzyApp.csproj", "{7D875CB4-A7F7-4327-83E2-046FC8C4B072}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhizzyApp.Tests", "WhizzyApp.Tests\WhizzyApp.Tests.csproj", "{169F8349-522B-4E4E-BC3E-F1C8A1F09A5B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Helpers", "Helpers\Helpers.csproj", "{A4D99464-FD20-4D3E-9218-E6ACD3E1E5DA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7D875CB4-A7F7-4327-83E2-046FC8C4B072}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D875CB4-A7F7-4327-83E2-046FC8C4B072}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D875CB4-A7F7-4327-83E2-046FC8C4B072}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D875CB4-A7F7-4327-83E2-046FC8C4B072}.Release|Any CPU.Build.0 = Release|Any CPU
+		{169F8349-522B-4E4E-BC3E-F1C8A1F09A5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{169F8349-522B-4E4E-BC3E-F1C8A1F09A5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{169F8349-522B-4E4E-BC3E-F1C8A1F09A5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{169F8349-522B-4E4E-BC3E-F1C8A1F09A5B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4D99464-FD20-4D3E-9218-E6ACD3E1E5DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4D99464-FD20-4D3E-9218-E6ACD3E1E5DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4D99464-FD20-4D3E-9218-E6ACD3E1E5DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4D99464-FD20-4D3E-9218-E6ACD3E1E5DA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

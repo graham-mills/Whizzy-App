@@ -1,0 +1,12 @@
+﻿@{
+    ViewBag.Title = "Sent";
+}
+
+<div class="container">
+    @if (ViewBag.user != null)
+    {
+        <h2>A comfirmation Email has been sent to @ViewBag.user</h2>
+        <p>Please follow the return link to activate your account.</p>
+    }
+</div>
+

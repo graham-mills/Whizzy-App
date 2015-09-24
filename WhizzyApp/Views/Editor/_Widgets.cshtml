@@ -1,0 +1,151 @@
+﻿<div id="toolpanel-label"></div>
+<div id="toolpanel">
+
+    <div id="tool-arc" class="toolwidget">
+        <div class="toolwidget-header">Angles</div>
+        <div class="toolwidget-body">
+            <h6>Start</h6> <input id="tool-arcstart" type="text" value="0">&deg;
+            <h6>  End</h6> <input id="tool-arcend" type="text" value="360">&deg;
+        </div>
+    </div>
+
+    <div id="tool-image" class="toolwidget">
+        <div class="toolwidget-header">Image</div>
+        <div class="toolwidget-body">
+            <button class="btn btn-link">Crop Image <span class="glyphicon glyphicon-scissors"></span></button>
+        </div>
+    </div>
+
+    <div id="tool-font" class="toolwidget">
+        <div class="toolwidget-header">Font</div>
+        <div class="toolwidget-body">
+            <select id="tool-fontselect" class="form-control">
+                <option>Arial</option>
+                <option>Arial Black</option>
+                <option>Comic Sans MS</option>
+                <option>Georgia</option>
+                <option>Impact</option>
+                <option>Verdana</option>
+                <option>Custom..</option>
+            </select>
+        </div>
+    </div>
+
+    <div id="tool-fontsize"class="toolwidget">
+        <div class="toolwidget-header">Font Size</div>
+        <div class="toolwidget-body">
+            <div class="input-group">
+                <span class="input-group-btn">
+                    <button id="btn_fontsizesubtract" class="btn btn-xs btn-primary"><span class="glyphicon glyphicon-minus"></span></button>
+                </span>
+                <input id="tool-fontsizeinput" type="text" value="1">
+                <span class="input-group-btn">
+                    <button id="btn_fontsizeadd" class="btn btn-xs btn-primary"><span class="glyphicon glyphicon-plus"></span></button>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div id="tool-fill" class="toolwidget">
+        <div class="toolwidget-header">Colour</div>
+        <div class="toolwidget-body">
+            <div class="btn swab">None</div>
+            <div class="btn-group dropup">
+                <button id="btn_toolfill" class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+                    Fill <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                    <li class="close-menu">
+                        <button id="btn_colourpicker" class="btn btn-small btn-link" data-toggle="modal" data-target="#colour-picker-modal"><span class="glyphicon glyphicon-tint"></span> Colour picker</button>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                        @{Html.RenderPartial("_ColourSwatches");}
+                    </li>
+                    <li class="divider"></li>
+                    <li class="close-menu">
+                        <button class="btn btn-small btn-link tool-colour close-menu" data-id="none">None</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="tool-stroke" class="toolwidget">
+        <div class="toolwidget-header">Outline</div>
+        <div class="toolwidget-body">
+            <div class="btn swab">None</div>
+            <div class="btn-group dropup">
+                <button id="btn_toolstroke" class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+                    Stroke <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                    <li class="close-menu">
+                        <button id="btn_colourpicker" class="btn btn-small btn-link" data-toggle="modal" data-target="#colour-picker-modal"><span class="glyphicon glyphicon-tint"></span> Colour picker</button>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                        @{Html.RenderPartial("_ColourSwatches");}
+                    </li>
+                    
+                    <li class="divider"></li>
+                    <li class="dropdown-header">Width</li>
+                    <li>
+                        <div class="input-group">
+                            <span class="input-group-btn">
+                                <button id="btn_toolstrokesubtract" class="btn btn-xs btn-primary"><span class="glyphicon glyphicon-minus"></span></button>
+                            </span>
+                            <input id="tool-strokeinput" type="text" value="1">
+                            <span class="input-group-btn">
+                                <button id="btn_toolstrokeadd" class="btn btn-xs btn-primary"><span class="glyphicon glyphicon-plus"></span></button>
+                            </span>
+                        </div>
+
+                    </li>
+                    <li class="divider"></li>
+                    <li class="close-menu">
+                        <button class="btn btn-small btn-link tool-colour" data-id="none">None</button>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="tool-bgimage" class="toolwidget">
+        <div class="toolwidget-header">Background Image</div>
+        <div class="toolwidget-body">
+            <div class="btn-group dropup">
+                <button id="btn_toolstroke" class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+                    Image <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                    <li class="close-menu">
+                        <button id="btn_toolbgimage" class="btn btn-link" data-toggle="modal" data-target="#image-select-modal">Select <span class="glyphicon glyphicon-picture"></span></button>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                        <div id="tool-bgimage-checkgroup" class="btn-group" data-toggle="buttons">
+                            <label class="btn btn-primary active">
+                                <input id="tool-bgimage-repeat" type="checkbox" autocomplete="off"> Tile
+                            </label>
+                            <label class="btn btn-primary">
+                                <input id="tool-bgimage-fixed" type="checkbox" autocomplete="off"> Fixed
+                            </label>
+                        </div>
+                    </li>
+                    <li class="divider"></li>
+                    <li class="close-menu"><button id="btn_toolbgimageremove" class="btn btn-link">None</button></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="tool-text" class="toolwidget">
+        <div class="toolwidget-header">Text</div>
+        <div class="toolwidget-body">
+            <button id="btn_tooltext" class="btn btn-link" data-toggle="modal" data-target="#text-edit-modal">Edit text <span class="glyphicon glyphicon-edit"></span></button>
+        </div>
+    </div>
+
+</div>

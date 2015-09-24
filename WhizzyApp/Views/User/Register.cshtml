@@ -1,0 +1,61 @@
+﻿@model WhizzyApp.Models.RegisterModel
+@{
+    ViewBag.Title = "Register";
+    ViewBag.footerLogin = false;
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <h3>Register an account</h3>
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                    @Html.LabelFor(m => m.EmailAddress, new { @class = "sr-only"})
+                    @Html.TextBoxFor(m => m.EmailAddress, new { @class = "form-control", placeholder="Email address", required="required", autofocus="autofocus",
+                                                                data_toggle = "tooltip",
+                                                                data_placement = "right",
+                                                                title = "Email will be used to verify account and act as your username",
+                                                                data_container = "body"
+                    })
+                
+                    @Html.ValidationMessageFor(m => m.EmailAddress)
+                    <br />
+                    @Html.LabelFor(m => m.Password, new { @class = "sr-only" })
+                    @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder="Password", required="required", autofocus="autofocus",
+                                                             data_toggle = "tooltip",
+                                                             data_placement = "right",
+                                                             title = "Enter password, minimum 6 characters",
+                                                             data_container = "body"
+                    })
+                
+                    @Html.ValidationMessageFor(m => m.Password)
+                    <br />
+                    @Html.LabelFor(m => m.ConfirmPassword, new { @class = "sr-only" })
+                    @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control", placeholder="Confirm password", required="required", autofocus="autofocus",
+                                                                    data_toggle = "tooltip",
+                                                                    data_placement = "right",
+                                                                    title = "Re-enter password",
+                                                                    data_container = "body"
+                    })
+                
+                    @Html.ValidationMessageFor(m => m.ConfirmPassword)
+                    @Html.ValidationMessage("failure")
+                <br/>
+                    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
+                    <br />
+            }
+
+            <p class="well well-sm center-block">Already have an account ? @Html.ActionLink("Log in", "../User/Login/")</p>
+        </div>
+    </div>
+</div>
+
+@section scripts {
+    <script type="text/javascript">
+        $(document).ready( function () {
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+    </script>
+}

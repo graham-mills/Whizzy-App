@@ -1,0 +1,57 @@
+﻿<div id="panel-presentation-2" class="col-lg-2 edit-col">
+    <div class="edit-col-header">
+        <h4>Settings</h4>
+    </div>
+    <div class="edit-col-body">
+        <div class="container-fluid">
+                <div class="checkbox">
+                    <label>
+                        <input id="presentation-shared" type="checkbox" value="" checked>
+                        <b>Share Presentation</b><br />
+                        <small>Presentation can be viewed with unique URL</small>
+                    </label>
+                </div>
+
+                <div class="checkbox">
+                    <label>
+                        <input id="presentation-fullscreen" type="checkbox" value="">
+                        <b>Disable fullscreen viewing</b><br />
+                        <small>Fix presentation for embedded viewing only</small>
+                    </label>
+                </div>
+
+                <div class="checkbox">
+                    <label>
+                        <input id="presentation-progressbar" type="checkbox" value="">
+                        <b>Disable progress bar</b><br />
+                        <small>Hide presentation progress</small>
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input id="presentation-controls" type="checkbox" value="">
+                        <b>Disable control pane</b><br />
+                        <small>Hide presentation controls</small>
+                    </label>
+                </div>
+        </div>
+        <div class="row">
+            <a href="#settings-advanced" data-toggle="collapse">Advanced</a><br /><br />
+            <div class="container-fluid collapse" id="settings-advanced">
+                <strong>Exportation Options</strong><br />
+                <form class="form-inline">
+                    <div class="form-group-sm">
+                        <label>Image path</label>
+                        <input id="presentation-imagepath" type="text" class="form-control" value="img/" />
+                        <small>Location of image assets</small>
+                    </div>
+                    <div class="form-group-sm">
+                        <label>Canvas width</label>
+                        <input id="presentation-canvaswidth" type="text" class="form-control" value="800" />
+                        <small>Default width of the canvas in pixels</small>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    </div>

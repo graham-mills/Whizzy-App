@@ -1,0 +1,11 @@
+﻿@{
+    ViewBag.Title = "Unverified";
+}
+
+<div class="container">
+    @if (ViewBag.unverifiedLogin != null && ViewBag.unverifiedLogin == true)
+    { 
+        <h2>Please follow the activation link sent to @ViewBag.userEmail</h2>
+        @Html.ActionLink("Resend activation Email", "Resend", "Verify", new { user = @ViewBag.userEmail }, new { @class = "btn btn btn-primary" })
+    }
+</div>

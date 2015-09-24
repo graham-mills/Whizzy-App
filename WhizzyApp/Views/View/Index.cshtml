@@ -1,0 +1,38 @@
+﻿@model WhizzyApp.Models.Presentation
+
+@{
+    ViewBag.Title = "View";
+}
+
+<div class="container">
+    <br/>
+        @if(Model.Shared || ViewBag.UserOwned)
+        {
+            <div class="row">
+                <h4 style="text-align:center;">@Model.Title</h4>
+            </div>
+            <div class="row">
+                <canvas id="whizzy">
+                    Canvas not supported.
+                </canvas>
+            </div>
+        }
+        else
+        {
+            <h5>This presentation has not been made publically available by the author.</h5>
+        }
+    <br/>
+</div>
+
+@if (Model.Shared || ViewBag.UserOwned)
+{
+    @section scripts{
+        @Scripts.Render("~/bundles/framework")
+        <script>
+            WHIZZY.json = @Html.Raw(Model.JSON+";")
+            WHIZZY.settings.IMAGE_PATH = "@Url.Content(Model.Filepath).Replace("\\", "\\\\")img/";
+            window.onload = WHIZZY.main();
+        </script>
+    }
+}
+
